@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Global Air Quality & Weather Intelligence System - Executive Brief</title>
+    <style>
+      :root {
+        --ink: #0c1626;
+        --muted: #5c6d82;
+        --panel: #ffffff;
+        --line: #dbe4ef;
+        --paper: #eef4f8;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "Helvetica Neue", Arial, sans-serif; background: var(--paper); color: var(--ink); }
+      .page { max-width: 1120px; margin: 0 auto; padding: 40px 28px 56px; }
+      .hero { background: linear-gradient(135deg, #0c1a2c, #16314f 55%, #234a64); color: white; border-radius: 28px; padding: 36px; }
+      .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; color: #8bd4e7; font-weight: 700; margin-bottom: 12px; }
+      h1, h2 { margin: 0; }
+      h1 { font-family: Georgia, serif; font-size: 44px; line-height: 1.05; max-width: 12ch; }
+      .hero p { max-width: 72ch; color: rgba(255,255,255,0.84); line-height: 1.7; }
+      .grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+      .stat, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 16px 38px rgba(12, 22, 38, 0.06); }
+      .stat { padding: 18px; }
+      .stat span, .meta, th { color: #52657c; font-size: 13px; font-weight: 600; }
+      .stat strong { display: block; margin-top: 8px; font-size: 26px; }
+      .section { margin-top: 26px; }
+      .section h2 { margin-bottom: 14px; font-size: 28px; font-family: Georgia, serif; }
+      .two-up { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+      .panel { padding: 24px; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { text-align: left; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+      ul { margin: 0; padding-left: 18px; }
+      li { margin-bottom: 10px; line-height: 1.5; }
+      .alert-list { list-style: none; padding: 0; display: grid; gap: 12px; }
+      .alert-item { padding: 14px 16px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(180deg, #ffffff, #f7fafc); line-height: 1.55; }
+      .alert-item strong { color: #0f2743; }
+      .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+      .badge { padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(139, 212, 231, 0.28); background: rgba(255,255,255,0.92); color: #14304d; font-size: 13px; font-weight: 700; box-shadow: inset 0 1px 0 rgba(255,255,255,0.6); }
+      .footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
+      @media print {
+        body { background: white; }
+        .page { max-width: none; padding: 20px; }
+        .hero, .panel, .stat { box-shadow: none; }
+      }
+      @media (max-width: 900px) {
+        .grid, .two-up { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <section class="hero">
+        <div class="eyebrow">Global Air Quality & Weather Intelligence System</div>
+        <h1>Executive Environmental Intelligence Brief</h1>
+        <p>
+          This report summarizes the premium multi-city air-quality and weather intelligence pipeline, including integrated ingestion,
+          normalized storage, automated alerts, regional comparison, and intervention-oriented decision support.
+        </p>
+        <div class="badge-row">
+          <div class="badge">Generated 2026-04-30T15:50:13.009Z</div>
+          <div class="badge">Tracked cities 285</div>
+          <div class="badge">Covered countries 63</div>
+          <div class="badge">Top pollutant PM10</div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="grid">
+          <div class="stat"><span>Average AQI</span><strong>85</strong></div>
+          <div class="stat"><span>Critical cities</span><strong>18</strong></div>
+          <div class="stat"><span>Warning cities</span><strong>75</strong></div>
+          <div class="stat"><span>Triggered alerts</span><strong>75</strong></div>
+        </div>
+      </section>
+      <section class="section two-up">
+        <div class="panel">
+          <div class="meta">Top Risk Cities</div>
+          <h2>Highest AQI locations</h2>
+          <table>
+            <thead><tr><th>City</th><th>Country</th><th>AQI</th><th>Category</th></tr></thead>
+            <tbody><tr><td>Krakow</td><td>PL</td><td>193</td><td>Unhealthy</td></tr><tr><td>Faisalabad</td><td>PK</td><td>188</td><td>Unhealthy</td></tr><tr><td>Delhi</td><td>IN</td><td>188</td><td>Unhealthy</td></tr><tr><td>Zhengzhou</td><td>CN</td><td>187</td><td>Unhealthy</td></tr><tr><td>Milan</td><td>IT</td><td>184</td><td>Unhealthy</td></tr><tr><td>Rawalpindi</td><td>PK</td><td>183</td><td>Unhealthy</td></tr><tr><td>Kanpur</td><td>IN</td><td>183</td><td>Unhealthy</td></tr><tr><td>Jinan</td><td>CN</td><td>181</td><td>Unhealthy</td></tr><tr><td>Turin</td><td>IT</td><td>180</td><td>Unhealthy</td></tr><tr><td>Lodz</td><td>PL</td><td>178</td><td>Unhealthy</td></tr><tr><td>Warsaw</td><td>PL</td><td>176</td><td>Unhealthy</td></tr><tr><td>Beijing</td><td>CN</td><td>173</td><td>Unhealthy</td></tr></tbody>
+          </table>
+        </div>
+        <div class="panel">
+          <div class="meta">Automation Summary</div>
+          <h2>What the system already does</h2>
+          <ul>
+            <li>Ingests AQI and weather data across a global watchlist.</li>
+            <li>Normalizes and merges both sources into structured records.</li>
+            <li>Stores latest, history, archive, analytics, and exported reports.</li>
+            <li>Detects threshold breaches, hazardous levels, and sudden spikes.</li>
+            <li>Supports dashboard, API, PDF deck, and print-ready HTML outputs.</li>
+          </ul>
+        </div>
+      </section>
+      <section class="section two-up">
+        <div class="panel">
+          <div class="meta">Country Intelligence</div>
+          <h2>Highest average AQI by country</h2>
+          <table>
+            <thead><tr><th>Country</th><th>Cities</th><th>Avg AQI</th><th>Max AQI</th></tr></thead>
+            <tbody><tr><td>NP</td><td>2</td><td>146</td><td>157</td></tr><tr><td>PK</td><td>5</td><td>142</td><td>188</td></tr><tr><td>PL</td><td>5</td><td>139</td><td>193</td></tr><tr><td>KH</td><td>2</td><td>130</td><td>133</td></tr><tr><td>AE</td><td>3</td><td>127</td><td>134</td></tr><tr><td>QA</td><td>1</td><td>125</td><td>125</td></tr><tr><td>CN</td><td>21</td><td>122</td><td>187</td></tr><tr><td>KW</td><td>1</td><td>122</td><td>122</td></tr><tr><td>VN</td><td>4</td><td>116</td><td>136</td></tr><tr><td>EG</td><td>4</td><td>112</td><td>131</td></tr></tbody>
+          </table>
+        </div>
+        <div class="panel">
+          <div class="meta">Latest Alerts</div>
+          <h2>Most recent escalations</h2>
+          <div class="alert-list"><div class="alert-item"><strong>Salvador</strong>: AQI warning threshold at AQI 107. Salvador AQI reached 107, moving into an elevated-risk band.</div><div class="alert-item"><strong>Fortaleza</strong>: AQI warning threshold at AQI 110. Fortaleza AQI reached 110, moving into an elevated-risk band.</div><div class="alert-item"><strong>Recife</strong>: AQI warning threshold at AQI 111. Recife AQI reached 111, moving into an elevated-risk band.</div><div class="alert-item"><strong>Belo Horizonte</strong>: AQI warning threshold at AQI 111. Belo Horizonte AQI reached 111, moving into an elevated-risk band.</div><div class="alert-item"><strong>Puebla</strong>: AQI warning threshold at AQI 141. Puebla AQI reached 141, moving into an elevated-risk band.</div><div class="alert-item"><strong>Merida</strong>: AQI warning threshold at AQI 102. Merida AQI reached 102, moving into an elevated-risk band.</div><div class="alert-item"><strong>Las Vegas</strong>: AQI warning threshold at AQI 138. Las Vegas AQI reached 138, moving into an elevated-risk band.</div><div class="alert-item"><strong>Turin</strong>: AQI danger threshold at AQI 180. Turin AQI reached 180, crossing the configured danger threshold.</div><div class="alert-item"><strong>Krakow</strong>: AQI danger threshold at AQI 193. Krakow AQI reached 193, crossing the configured danger threshold.</div><div class="alert-item"><strong>Lodz</strong>: AQI danger threshold at AQI 178. Lodz AQI reached 178, crossing the configured danger threshold.</div><div class="alert-item"><strong>Giza</strong>: AQI warning threshold at AQI 131. Giza AQI reached 131, moving into an elevated-risk band.</div><div class="alert-item"><strong>Sharjah</strong>: AQI warning threshold at AQI 113. Sharjah AQI reached 113, moving into an elevated-risk band.</div><div class="alert-item"><strong>Medina</strong>: AQI warning threshold at AQI 110. Medina AQI reached 110, moving into an elevated-risk band.</div><div class="alert-item"><strong>Xiamen</strong>: AQI warning threshold at AQI 111. Xiamen AQI reached 111, moving into an elevated-risk band.</div></div>
+        </div>
+      </section>
+      <div class="footer">
+        Generated automatically by the environmental pipeline. Open this file in a browser and print to PDF for a polished executive handout.
+      </div>
+    </div>
+  </body>
+</html>

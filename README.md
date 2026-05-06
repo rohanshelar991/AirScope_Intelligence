@@ -1,273 +1,199 @@
-# 🌦️ ClimaNow - Next-Generation Weather App
+# Global Air Quality & Weather Intelligence System
 
-![ClimaNow Banner](https://via.placeholder.com/1200x400/1e40af/ffffff?text=ClimaNow+-+Your+Beautiful+Weather+Companion)
+This project is a hackathon-ready environmental intelligence platform that combines:
 
-> **Your beautiful, AI-powered weather companion with advanced forecasts, interactive maps, and personalized insights.**
+- WAQI air quality data
+- OpenWeather current weather data
+- Automated threshold-based alerts
+- A React dashboard for decision-makers
 
-[![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1.13-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
-[![PWA Ready](https://img.shields.io/badge/PWA-Ready-4285F4?logo=googlechrome)](https://web.dev/progressive-web-apps/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+The focus is on ingestion, transformation, automation, storage, and analytical clarity.
 
-## ✨ Features
+## What It Does
 
-### 🌟 Core Weather Features
-- **Real-Time Weather**: Auto-detect GPS location with current conditions
-- **Smart Search**: City search with auto-suggestions and search history
-- **Advanced Forecasts**: 7-14 day daily and hourly forecasts with charts
-- **Astronomical Data**: Sunrise, sunset, moon phases, and tides
+The system:
 
-### 🌍 Comprehensive Global Coverage
-- **Worldwide Cities**: Access weather data for over 200+ cities across all continents
-- **Regional Coverage**: Detailed weather information for states, provinces, and regions
-- **Country-Level Data**: Comprehensive coverage for all countries worldwide
-- **Inhabited Places**: Weather data for cities, towns, and villages of all sizes
-- **Advanced Search Filters**: Search by continent, country, or region for precise results
+- fetches AQI and weather data for a configured city list
+- normalizes both sources into one structured snapshot model
+- stores latest, historical, alert, and archive outputs as JSON
+- calculates summary insights and weather-to-pollution correlations
+- triggers alerts for warning, danger, hazardous, and sudden spike events
+- renders a dashboard with AQI trends, city comparison, correlation views, and alert summaries
 
-### 🚀 Advanced Features
-- **Interactive Weather Map**: Global map with temperature, precipitation, wind, AQI, and cloud layers
-- **Personalized Dashboard**: Customizable widgets and multiple saved cities
-- **AI Weather Assistant**: Intelligent chatbot with voice recognition
-- **Air Quality Monitoring**: Real-time AQI with health recommendations
-- **UV Index & Pollen**: Comprehensive environmental data
+## Architecture
 
-### 💫 Premium Features
-- **Live Weather Animations**: Rain drops, snowflakes, lightning effects
-- **Smart Notifications**: Severe weather alerts, rain notifications, UV warnings
-- **Offline Mode**: Works without internet with cached data
-- **Voice Search**: "What's the weather in Mumbai?"
-- **PWA Support**: Installable, works offline, native app-like experience
+### Ingestion
 
-## 🛠️ Technology Stack
+- `scripts/environmentPipeline.js`
+- Pulls data from WAQI and OpenWeather
+- Supports live, demo, and scheduled modes
 
-### Frontend
-- **React 19** with TypeScript for type safety
-- **Tailwind CSS** for modern, responsive design
-- **Framer Motion** for smooth animations and transitions
-- **React Leaflet** for interactive maps
-- **Recharts & Chart.js** for data visualization
-- **Lottie React** for advanced animations
+### Storage
 
-### APIs & Services
-- **OpenWeatherMap API** for weather data
-- **Geolocation API** for location services
-- **Web Speech API** for voice recognition
-- **Service Workers** for offline functionality
-- **Push Notifications** for weather alerts
+- `public/data/environment-latest.json`
+- `public/data/environment-history.json`
+- `public/data/alerts.json`
+- `public/data/analytics.json`
+- `data/archive/*.jsonl`
+- `logs/alerts.log`
 
-### Architecture
-- **Component-based architecture** with custom hooks
-- **TypeScript interfaces** for type safety
-- **Caching system** for performance optimization
-- **Error boundaries** for robust error handling
-- **Accessibility-first** design
+### Dashboard
 
-## 🚀 Quick Start
+- `src/App.tsx`
+- Reads generated JSON files from `public/data`
+- Shows:
+  - AQI trend over time
+  - city-wise AQI comparison
+  - weather correlation analysis
+  - executive summary metrics
+  - automated alert feed
 
-### Prerequisites
-- Node.js 16+ 
-- npm or yarn
-- OpenWeatherMap API key
+## Setup
 
-### Installation
+### 1. Install dependencies
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/clima-now.git
-   cd clima-now
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   ```
-   
-   Add your API keys to `.env`:
-   ```env
-   REACT_APP_OPENWEATHER_API_KEY=your_openweathermap_api_key
-   REACT_APP_AIRVISUAL_API_KEY=your_airvisual_api_key
-   ```
-
-4. **Start the development server**
-   ```bash
-   npm start
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 📱 Usage
-
-### Getting Started
-1. **Allow location access** when prompted for accurate weather data
-2. **Search for cities** using the search bar with auto-suggestions
-3. **Save favorite locations** by clicking the star icon
-4. **Customize your dashboard** with different weather widgets
-
-### Global Weather Coverage
-1. **World Cities Explorer**: Access the "World Cities" view to browse cities by continent
-2. **Global Coverage**: Use the "Global Coverage" view to see comprehensive statistics
-3. **Advanced Filters**: Filter cities by continent or country for targeted searches
-4. **Comprehensive Data**: View detailed information for all inhabited places worldwide
-
-### AI Assistant
-- Click the **chat icon** to open the weather assistant
-- Ask questions like:
-  - "Should I carry an umbrella today?"
-  - "What should I wear?"
-  - "Is it good weather for outdoor activities?"
-- Use **voice commands** by clicking the microphone icon
-
-### Interactive Map
-- Switch between different **weather layers**
-- Adjust **opacity** for better visibility
-- **Click on map** locations to get weather data
-- **Zoom and pan** like Google Maps
-
-### Personalization
-- Access **Settings** to customize:
-  - Temperature units (°C/°F)
-  - Wind speed units (km/h, mph, m/s)
-  - Time format (12h/24h)
-  - Theme preferences
-  - Notification settings
-
-## 🎨 Screenshots
-
-<table>
-  <tr>
-    <td><img src="https://via.placeholder.com/300x200/1e40af/ffffff?text=Dashboard" alt="Dashboard" width="300"/></td>
-    <td><img src="https://via.placeholder.com/300x200/059669/ffffff?text=Weather+Map" alt="Weather Map" width="300"/></td>
-    <td><img src="https://via.placeholder.com/300x200/7c3aed/ffffff?text=AI+Assistant" alt="AI Assistant" width="300"/></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Personalized Dashboard</strong></td>
-    <td align="center"><strong>Interactive Weather Map</strong></td>
-    <td align="center"><strong>AI Weather Assistant</strong></td>
-  </tr>
-  <tr>
-    <td><img src="https://via.placeholder.com/300x200/d97706/ffffff?text=Global+Coverage" alt="Global Coverage" width="300"/></td>
-    <td><img src="https://via.placeholder.com/300x200/0d9488/ffffff?text=World+Cities" alt="World Cities" width="300"/></td>
-    <td><img src="https://via.placeholder.com/300x200/be185d/ffffff?text=Advanced+Search" alt="Advanced Search" width="300"/></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Global Weather Coverage</strong></td>
-    <td align="center"><strong>World Cities Explorer</strong></td>
-    <td align="center"><strong>Advanced Search Filters</strong></td>
-  </tr>
-</table>
-
-## 📦 Available Scripts
-
-### Development
 ```bash
-npm start          # Start development server
-npm test           # Run test suite
-npm run build      # Build for production
-npm run eject      # Eject from Create React App (one-way)
+npm install
 ```
 
-### Production
+### 2. Configure environment variables
+
+Copy `.env.example` to `.env.local` and set your keys.
+
+Required:
+
+```env
+WAQI_API_KEY=your_waqi_key
+OPENWEATHER_API_KEY=your_openweather_key
+CITY_LIST=Mumbai,Delhi,London,Los Angeles
+```
+
+Optional alerting:
+
+```env
+ALERT_MODE=console
+ALERT_RECIPIENT=team@example.com
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_gmail_app_password
+SMS_RECIPIENT=+911234567890
+TWILIO_ACCOUNT_SID=your_twilio_sid
+TWILIO_AUTH_TOKEN=your_twilio_token
+TWILIO_PHONE_NUMBER=your_twilio_number
+PIPELINE_CRON=*/30 * * * *
+```
+
+Supported `ALERT_MODE` values:
+
+- `console`
+- `email`
+- `sms`
+- `all`
+
+## Run Modes
+
+### Demo dataset
+
+Generates a realistic multi-city history without calling live APIs.
+
 ```bash
-npm run build      # Create production build
-npm run serve      # Serve production build locally
+npm run pipeline:demo
 ```
 
-## 🏗️ Project Structure
+### One live ingestion run
 
-```
-src/
-├── components/           # Reusable UI components
-│   ├── animations/      # Weather animations
-│   ├── assistant/       # AI weather assistant
-│   ├── dashboard/       # Dashboard and widgets
-│   ├── map/            # Interactive weather map
-│   ├── settings/       # Settings and preferences
-│   ├── ui/             # Base UI components
-│   └── weather/        # Weather-specific components
-├── hooks/              # Custom React hooks
-├── services/           # API and external services
-├── types/              # TypeScript type definitions
-├── utils/              # Utility functions
-└── context/            # React context providers
+```bash
+npm run pipeline:run
 ```
 
-## 🔧 API Configuration
+### Scheduled ingestion
 
-### OpenWeatherMap API
-1. Sign up at [OpenWeatherMap](https://openweathermap.org/api)
-2. Get your free API key
-3. Add to `.env` file
+Uses `PIPELINE_CRON` from `.env.local`.
 
-### AirVisual API (Optional)
-1. Sign up at [AirVisual](https://www.iqair.com/air-pollution-data-api)
-2. Get API key for air quality data
-3. Add to `.env` file
+```bash
+npm run pipeline:schedule
+```
 
-## 🌐 PWA Features
+### Start the dashboard
 
-- ✅ **Installable**: Add to home screen
-- ✅ **Offline capable**: Works without internet
-- ✅ **Background sync**: Updates data when online
-- ✅ **Push notifications**: Weather alerts
-- ✅ **App shortcuts**: Quick access to features
+```bash
+npm start
+```
 
-## 📱 Mobile Support
+## Dashboard Views
 
-- **Responsive design** for all screen sizes
-- **Touch-optimized** interactions
-- **Native-like experience** on mobile devices
-- **iOS/Android** app shortcuts
-- **Voice search** on mobile browsers
+The dashboard includes:
 
-## 🔒 Privacy & Security
+- AQI trends over time for the selected city
+- city-wise AQI comparison bar chart
+- weather factor vs AQI scatter analysis
+- current environmental brief
+- correlation coefficients across temperature, humidity, wind speed, and pressure
+- pipeline workflow summary
+- latest alert cards
 
-- **Location data** used only for weather information
-- **No personal data** stored on external servers
-- **Secure API calls** with proper error handling
-- **Local storage** for preferences and cache
-- **GDPR compliant** design
+## Alert Logic
 
-## 🤝 Contributing
+The pipeline raises alerts when:
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- AQI crosses the warning threshold
+- AQI crosses the danger threshold
+- AQI reaches hazardous levels
+- AQI spikes sharply compared with the previous snapshot
 
-## 📄 License
+Thresholds are configurable through:
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+```env
+AQI_WARNING_THRESHOLD=100
+AQI_DANGER_THRESHOLD=150
+AQI_HAZARDOUS_THRESHOLD=200
+AQI_SPIKE_DELTA=35
+```
 
-## 🙏 Acknowledgments
+## Demo Flow For Judges
 
-- [OpenWeatherMap](https://openweathermap.org/) for weather data
-- [React](https://reactjs.org/) for the amazing framework
-- [Tailwind CSS](https://tailwindcss.com/) for styling
-- [Framer Motion](https://www.framer.com/motion/) for animations
-- [Lucide React](https://lucide.dev/) for beautiful icons
+1. Run `npm run pipeline:demo`
+2. Run `npm start`
+3. Open the app in the browser
+4. Explain the pipeline stages from the dashboard
+5. Switch to live mode with `npm run pipeline:run` if API keys are configured
 
-## 📞 Support
+## Verification
 
-If you have any questions or need help, please:
-- Open an [issue](https://github.com/yourusername/clima-now/issues)
-- Join our [Discord community](https://discord.gg/clima-now)
-- Email us at support@clima-now.app
+Production build:
 
----
+```bash
+npm run build
+```
 
-<div align="center">
-  <p><strong>Made with ❤️ for beautiful weather experiences</strong></p>
-  <p>
-    <a href="https://github.com/yourusername/clima-now">⭐ Star this repo</a> |
-    <a href="https://github.com/yourusername/clima-now/issues">🐛 Report Bug</a> |
-    <a href="https://github.com/yourusername/clima-now/issues">✨ Request Feature</a>
-  </p>
-</div>
+## Vercel Deploy
+
+This repo is now set up to deploy cleanly to Vercel using the static snapshot files in `public/data`.
+
+### Recommended deployment flow
+
+1. Run `npm run pipeline:demo` or `npm run pipeline:run`
+2. Commit the refreshed files in `public/data`
+3. Import the `clima-now` folder as the Vercel project root
+4. Deploy with the included `vercel.json`
+
+### What works on Vercel
+
+- SPA routing falls back to `index.html`
+- `public/data/*.json` is served directly for the dashboard
+- the UI automatically labels static production mode as `Vercel Snapshot`
+- shareable links can point to a page hash and selected city query
+
+### What does not run on Vercel by default
+
+- `npm run pipeline:schedule`
+- `npm run api:start`
+
+Those remain local/background runtime tools. On Vercel, the dashboard is intended to read the generated snapshot JSON files unless you later add a hosted API layer.
+
+## Key Files
+
+- `scripts/environmentPipeline.js`: ingestion, transformation, storage, alerts
+- `src/App.tsx`: intelligence dashboard
+- `src/App.css`: dashboard styling
+- `vercel.json`: Vercel deployment configuration
+- `.env.example`: environment template

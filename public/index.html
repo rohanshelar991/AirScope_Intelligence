@@ -6,140 +6,18 @@
     <meta name="theme-color" content="#0f2027" />
     <meta
       name="description"
-      content="Clima Now - Premium weather dashboard with real-time data, forecasts, and smart UI."
+      content="Global Air Quality & Weather Intelligence System dashboard powered by WAQI and OpenWeather."
     />
-    <title>Clima Now</title>
+    <title>Air Quality & Weather Intelligence</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="theme-light">
-    <div class="app" id="app">
-      <header class="app-header">
-        <div class="brand">
-          <div class="brand-badge">CN</div>
-          <div>
-            <p class="brand-name">Clima Now</p>
-            <p class="brand-subtitle">Premium Weather Studio</p>
-          </div>
-        </div>
-
-        <div class="header-actions">
-          <div class="search">
-            <input
-              id="searchInput"
-              type="text"
-              placeholder="Search city..."
-              autocomplete="off"
-              aria-label="Search city"
-            />
-            <button id="searchButton" class="btn primary">Search</button>
-          </div>
-          <button id="locateButton" class="btn ghost">Use My Location</button>
-          <button id="themeToggle" class="btn ghost">Toggle Theme</button>
-        </div>
-      </header>
-
-      <main class="content">
-        <section class="hero">
-          <div class="hero-card glass" id="heroCard">
-            <div class="hero-top">
-              <div>
-                <p class="eyebrow" id="currentDate">Loading date...</p>
-                <div class="city-row">
-                  <h1 id="cityName">—</h1>
-                  <button id="favoriteButton" class="btn ghost small">☆</button>
-                </div>
-                <p id="weatherDesc" class="subtitle">—</p>
-              </div>
-              <div class="temp">
-                <div class="temp-value" id="currentTemp">—</div>
-                <div class="temp-meta" id="feelsLike">Feels like —</div>
-              </div>
-            </div>
-
-            <div class="hero-body">
-              <div class="hero-icon" id="weatherIcon">☀️</div>
-              <div class="metrics">
-                <div class="metric">
-                  <span>Humidity</span>
-                  <strong id="humidity">—</strong>
-                </div>
-                <div class="metric">
-                  <span>Wind</span>
-                  <strong id="wind">—</strong>
-                </div>
-                <div class="metric">
-                  <span>Pressure</span>
-                  <strong id="pressure">—</strong>
-                </div>
-                <div class="metric">
-                  <span>Visibility</span>
-                  <strong id="visibility">—</strong>
-                </div>
-                <div class="metric">
-                  <span>Sunrise</span>
-                  <strong id="sunrise">—</strong>
-                </div>
-                <div class="metric">
-                  <span>Sunset</span>
-                  <strong id="sunset">—</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="side-panel">
-            <div class="panel glass">
-              <h3>Recent Searches</h3>
-              <ul id="recentList" class="list"></ul>
-            </div>
-            <div class="panel glass">
-              <h3>Favorite Cities</h3>
-              <ul id="favoriteList" class="list"></ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="forecast">
-          <div class="section-header">
-            <h2>5-Day Forecast</h2>
-            <button id="refreshButton" class="btn ghost">Refresh</button>
-          </div>
-          <div class="forecast-grid" id="forecastGrid"></div>
-        </section>
-
-        <section class="global">
-          <div class="section-header">
-            <h2>Global 100 Cities</h2>
-            <div class="section-actions">
-              <span id="globalStatus" class="status">Ready</span>
-              <button id="loadGlobalButton" class="btn ghost">Load Global 100</button>
-              <button id="refreshGlobalButton" class="btn primary">Refresh Global 100</button>
-            </div>
-          </div>
-          <div class="global-grid" id="globalGrid"></div>
-        </section>
-      </main>
-
-      <div id="loader" class="loader hidden">
-        <div class="spinner"></div>
-        <p>Fetching fresh skies...</p>
-      </div>
-
-      <div class="bg-anim" id="bgAnim">
-        <div class="rain"></div>
-        <div class="snow"></div>
-        <div class="clouds"></div>
-      </div>
-
-    </div>
-
-    <script src="config.js"></script>
-    <script src="script.js"></script>
+  <body>
+    <noscript>You need to enable JavaScript to run this dashboard.</noscript>
+    <div id="root"></div>
   </body>
 </html>

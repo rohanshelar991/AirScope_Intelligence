@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-04-30T15:50:12.989Z",
+  "summary": {
+    "averageAqi": 85.35438596491228,
+    "highestAqiCity": "Krakow",
+    "totalCities": 285,
+    "criticalCities": 18,
+    "alertCount": 75,
+    "correlations": [
+      {
+        "metric": "temperature",
+        "label": "Temperature",
+        "coefficient": 0.497
+      },
+      {
+        "metric": "humidity",
+        "label": "Humidity",
+        "coefficient": -0.299
+      },
+      {
+        "metric": "windSpeed",
+        "label": "Wind Speed",
+        "coefficient": -0.614
+      },
+      {
+        "metric": "pressure",
+        "label": "Pressure",
+        "coefficient": -0.74
+      }
+    ],
+    "topPollutant": "pm10",
+    "totalCountries": 63,
+    "warningCities": 75
+  }
+}

@@ -1,8 +1,16 @@
-// React bundle disabled to allow a static HTML/CSS/JS app in public/index.html.
-// Keeping this file minimal prevents React from overwriting the static UI.
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+
 const root = document.getElementById('root');
-if (root) {
-  root.remove();
+
+if (!root) {
+  throw new Error('React root element was not found.');
 }
 
-export {};
+ReactDOM.createRoot(root).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

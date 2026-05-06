@@ -2,6 +2,7 @@
   "name": "clima-now",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://127.0.0.1:8081",
   "dependencies": {
     "@headlessui/react": "^2.2.7",
     "@react-leaflet/core": "^3.0.0",
@@ -48,6 +49,10 @@
     "start": "craco start",
     "prebuild": "node scripts/generate-config.js",
     "build": "craco build",
+    "pipeline:run": "node scripts/environmentPipeline.js",
+    "pipeline:demo": "node scripts/environmentPipeline.js demo",
+    "pipeline:schedule": "node scripts/environmentPipeline.js schedule",
+    "api:start": "API_HOST=127.0.0.1 node scripts/dashboardApiServer.js",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

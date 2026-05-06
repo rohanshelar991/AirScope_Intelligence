@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    background: #07111f;
+  }
+
   body {
     @apply font-sans antialiased;
+    margin: 0;
   }
 
   * {

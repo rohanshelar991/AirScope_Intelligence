@@ -1,0 +1,755 @@
+{
+  "generatedAt": "2026-04-30T15:50:12.989Z",
+  "alerts": [
+    {
+      "id": "salvador-0-warning",
+      "city": "Salvador",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Salvador AQI reached 107, moving into an elevated-risk band.",
+      "aqi": 107,
+      "delta": -3,
+      "createdAt": "2026-04-30T15:50:12.972Z"
+    },
+    {
+      "id": "fortaleza-0-warning",
+      "city": "Fortaleza",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Fortaleza AQI reached 110, moving into an elevated-risk band.",
+      "aqi": 110,
+      "delta": -2,
+      "createdAt": "2026-04-30T15:50:12.972Z"
+    },
+    {
+      "id": "recife-0-warning",
+      "city": "Recife",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Recife AQI reached 111, moving into an elevated-risk band.",
+      "aqi": 111,
+      "delta": 1,
+      "createdAt": "2026-04-30T15:50:12.972Z"
+    },
+    {
+      "id": "belo-horizonte-0-warning",
+      "city": "Belo Horizonte",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Belo Horizonte AQI reached 111, moving into an elevated-risk band.",
+      "aqi": 111,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.972Z"
+    },
+    {
+      "id": "puebla-0-warning",
+      "city": "Puebla",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Puebla AQI reached 141, moving into an elevated-risk band.",
+      "aqi": 141,
+      "delta": -3,
+      "createdAt": "2026-04-30T15:50:12.971Z"
+    },
+    {
+      "id": "merida-0-warning",
+      "city": "Merida",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Merida AQI reached 102, moving into an elevated-risk band.",
+      "aqi": 102,
+      "delta": 2,
+      "createdAt": "2026-04-30T15:50:12.971Z"
+    },
+    {
+      "id": "las-vegas-0-warning",
+      "city": "Las Vegas",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Las Vegas AQI reached 138, moving into an elevated-risk band.",
+      "aqi": 138,
+      "delta": 4,
+      "createdAt": "2026-04-30T15:50:12.970Z"
+    },
+    {
+      "id": "turin-0-danger",
+      "city": "Turin",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Turin AQI reached 180, crossing the configured danger threshold.",
+      "aqi": 180,
+      "delta": 1,
+      "createdAt": "2026-04-30T15:50:12.969Z"
+    },
+    {
+      "id": "krakow-0-danger",
+      "city": "Krakow",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Krakow AQI reached 193, crossing the configured danger threshold.",
+      "aqi": 193,
+      "delta": 3,
+      "createdAt": "2026-04-30T15:50:12.969Z"
+    },
+    {
+      "id": "lodz-0-danger",
+      "city": "Lodz",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Lodz AQI reached 178, crossing the configured danger threshold.",
+      "aqi": 178,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.969Z"
+    },
+    {
+      "id": "giza-0-warning",
+      "city": "Giza",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Giza AQI reached 131, moving into an elevated-risk band.",
+      "aqi": 131,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.967Z"
+    },
+    {
+      "id": "sharjah-0-warning",
+      "city": "Sharjah",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Sharjah AQI reached 113, moving into an elevated-risk band.",
+      "aqi": 113,
+      "delta": 4,
+      "createdAt": "2026-04-30T15:50:12.966Z"
+    },
+    {
+      "id": "medina-0-warning",
+      "city": "Medina",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Medina AQI reached 110, moving into an elevated-risk band.",
+      "aqi": 110,
+      "delta": 0,
+      "createdAt": "2026-04-30T15:50:12.966Z"
+    },
+    {
+      "id": "xiamen-0-warning",
+      "city": "Xiamen",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Xiamen AQI reached 111, moving into an elevated-risk band.",
+      "aqi": 111,
+      "delta": 5,
+      "createdAt": "2026-04-30T15:50:12.965Z"
+    },
+    {
+      "id": "zhengzhou-0-danger",
+      "city": "Zhengzhou",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Zhengzhou AQI reached 187, crossing the configured danger threshold.",
+      "aqi": 187,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.965Z"
+    },
+    {
+      "id": "jinan-0-danger",
+      "city": "Jinan",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Jinan AQI reached 181, crossing the configured danger threshold.",
+      "aqi": 181,
+      "delta": 5,
+      "createdAt": "2026-04-30T15:50:12.965Z"
+    },
+    {
+      "id": "davao-0-warning",
+      "city": "Davao",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Davao AQI reached 102, moving into an elevated-risk band.",
+      "aqi": 102,
+      "delta": -1,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "da-nang-0-warning",
+      "city": "Da Nang",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Da Nang AQI reached 102, moving into an elevated-risk band.",
+      "aqi": 102,
+      "delta": 1,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "hai-phong-0-warning",
+      "city": "Hai Phong",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Hai Phong AQI reached 136, moving into an elevated-risk band.",
+      "aqi": 136,
+      "delta": 3,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "siem-reap-0-warning",
+      "city": "Siem Reap",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Siem Reap AQI reached 133, moving into an elevated-risk band.",
+      "aqi": 133,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "nanjing-0-warning",
+      "city": "Nanjing",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Nanjing AQI reached 123, moving into an elevated-risk band.",
+      "aqi": 123,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "hangzhou-0-warning",
+      "city": "Hangzhou",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Hangzhou AQI reached 119, moving into an elevated-risk band.",
+      "aqi": 119,
+      "delta": 4,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "tianjin-0-danger",
+      "city": "Tianjin",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Tianjin AQI reached 160, crossing the configured danger threshold.",
+      "aqi": 160,
+      "delta": 1,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "chongqing-0-warning",
+      "city": "Chongqing",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Chongqing AQI reached 127, moving into an elevated-risk band.",
+      "aqi": 127,
+      "delta": -1,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "xi-an-0-danger",
+      "city": "Xi'an",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Xi'an AQI reached 164, crossing the configured danger threshold.",
+      "aqi": 164,
+      "delta": -3,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "suzhou-0-warning",
+      "city": "Suzhou",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Suzhou AQI reached 125, moving into an elevated-risk band.",
+      "aqi": 125,
+      "delta": -5,
+      "createdAt": "2026-04-30T15:50:12.964Z"
+    },
+    {
+      "id": "visakhapatnam-0-warning",
+      "city": "Visakhapatnam",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Visakhapatnam AQI reached 102, moving into an elevated-risk band.",
+      "aqi": 102,
+      "delta": -2,
+      "createdAt": "2026-04-30T15:50:12.963Z"
+    },
+    {
+      "id": "rawalpindi-0-danger",
+      "city": "Rawalpindi",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Rawalpindi AQI reached 183, crossing the configured danger threshold.",
+      "aqi": 183,
+      "delta": -3,
+      "createdAt": "2026-04-30T15:50:12.963Z"
+    },
+    {
+      "id": "faisalabad-0-danger",
+      "city": "Faisalabad",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Faisalabad AQI reached 188, crossing the configured danger threshold.",
+      "aqi": 188,
+      "delta": -1,
+      "createdAt": "2026-04-30T15:50:12.963Z"
+    },
+    {
+      "id": "pokhara-0-danger",
+      "city": "Pokhara",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Pokhara AQI reached 157, crossing the configured danger threshold.",
+      "aqi": 157,
+      "delta": 2,
+      "createdAt": "2026-04-30T15:50:12.963Z"
+    },
+    {
+      "id": "kandy-0-warning",
+      "city": "Kandy",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Kandy AQI reached 111, moving into an elevated-risk band.",
+      "aqi": 111,
+      "delta": 4,
+      "createdAt": "2026-04-30T15:50:12.963Z"
+    },
+    {
+      "id": "phuket-0-warning",
+      "city": "Phuket",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Phuket AQI reached 105, moving into an elevated-risk band.",
+      "aqi": 105,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.963Z"
+    },
+    {
+      "id": "surabaya-0-warning",
+      "city": "Surabaya",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Surabaya AQI reached 113, moving into an elevated-risk band.",
+      "aqi": 113,
+      "delta": 1,
+      "createdAt": "2026-04-30T15:50:12.963Z"
+    },
+    {
+      "id": "santiago-0-warning",
+      "city": "Santiago",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Santiago AQI reached 137, moving into an elevated-risk band.",
+      "aqi": 137,
+      "delta": -2,
+      "createdAt": "2026-04-30T15:50:12.962Z"
+    },
+    {
+      "id": "sao-paulo-0-warning",
+      "city": "Sao Paulo",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Sao Paulo AQI reached 108, moving into an elevated-risk band.",
+      "aqi": 108,
+      "delta": -5,
+      "createdAt": "2026-04-30T15:50:12.962Z"
+    },
+    {
+      "id": "rio-de-janeiro-0-warning",
+      "city": "Rio de Janeiro",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Rio de Janeiro AQI reached 100, moving into an elevated-risk band.",
+      "aqi": 100,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.962Z"
+    },
+    {
+      "id": "surat-0-warning",
+      "city": "Surat",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Surat AQI reached 126, moving into an elevated-risk band.",
+      "aqi": 126,
+      "delta": 0,
+      "createdAt": "2026-04-30T15:50:12.962Z"
+    },
+    {
+      "id": "kanpur-0-danger",
+      "city": "Kanpur",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Kanpur AQI reached 183, crossing the configured danger threshold.",
+      "aqi": 183,
+      "delta": 2,
+      "createdAt": "2026-04-30T15:50:12.962Z"
+    },
+    {
+      "id": "patna-0-warning",
+      "city": "Patna",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Patna AQI reached 121, moving into an elevated-risk band.",
+      "aqi": 121,
+      "delta": 5,
+      "createdAt": "2026-04-30T15:50:12.962Z"
+    },
+    {
+      "id": "houston-0-warning",
+      "city": "Houston",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Houston AQI reached 106, moving into an elevated-risk band.",
+      "aqi": 106,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.961Z"
+    },
+    {
+      "id": "phoenix-0-warning",
+      "city": "Phoenix",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Phoenix AQI reached 118, moving into an elevated-risk band.",
+      "aqi": 118,
+      "delta": -5,
+      "createdAt": "2026-04-30T15:50:12.961Z"
+    },
+    {
+      "id": "miami-0-warning",
+      "city": "Miami",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Miami AQI reached 108, moving into an elevated-risk band.",
+      "aqi": 108,
+      "delta": 1,
+      "createdAt": "2026-04-30T15:50:12.961Z"
+    },
+    {
+      "id": "mexico-city-0-warning",
+      "city": "Mexico City",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Mexico City AQI reached 148, moving into an elevated-risk band.",
+      "aqi": 148,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.961Z"
+    },
+    {
+      "id": "milan-0-danger",
+      "city": "Milan",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Milan AQI reached 184, crossing the configured danger threshold.",
+      "aqi": 184,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.960Z"
+    },
+    {
+      "id": "warsaw-0-danger",
+      "city": "Warsaw",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Warsaw AQI reached 176, crossing the configured danger threshold.",
+      "aqi": 176,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.960Z"
+    },
+    {
+      "id": "cairo-0-warning",
+      "city": "Cairo",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Cairo AQI reached 126, moving into an elevated-risk band.",
+      "aqi": 126,
+      "delta": -5,
+      "createdAt": "2026-04-30T15:50:12.959Z"
+    },
+    {
+      "id": "lagos-0-warning",
+      "city": "Lagos",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Lagos AQI reached 108, moving into an elevated-risk band.",
+      "aqi": 108,
+      "delta": -1,
+      "createdAt": "2026-04-30T15:50:12.959Z"
+    },
+    {
+      "id": "dubai-0-warning",
+      "city": "Dubai",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Dubai AQI reached 133, moving into an elevated-risk band.",
+      "aqi": 133,
+      "delta": 2,
+      "createdAt": "2026-04-30T15:50:12.958Z"
+    },
+    {
+      "id": "abu-dhabi-0-warning",
+      "city": "Abu Dhabi",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Abu Dhabi AQI reached 134, moving into an elevated-risk band.",
+      "aqi": 134,
+      "delta": 5,
+      "createdAt": "2026-04-30T15:50:12.958Z"
+    },
+    {
+      "id": "riyadh-0-warning",
+      "city": "Riyadh",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Riyadh AQI reached 132, moving into an elevated-risk band.",
+      "aqi": 132,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.958Z"
+    },
+    {
+      "id": "doha-0-warning",
+      "city": "Doha",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Doha AQI reached 125, moving into an elevated-risk band.",
+      "aqi": 125,
+      "delta": 5,
+      "createdAt": "2026-04-30T15:50:12.958Z"
+    },
+    {
+      "id": "kuwait-city-0-warning",
+      "city": "Kuwait City",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Kuwait City AQI reached 122, moving into an elevated-risk band.",
+      "aqi": 122,
+      "delta": 4,
+      "createdAt": "2026-04-30T15:50:12.958Z"
+    },
+    {
+      "id": "tehran-0-warning",
+      "city": "Tehran",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Tehran AQI reached 138, moving into an elevated-risk band.",
+      "aqi": 138,
+      "delta": -2,
+      "createdAt": "2026-04-30T15:50:12.958Z"
+    },
+    {
+      "id": "beijing-0-danger",
+      "city": "Beijing",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Beijing AQI reached 173, crossing the configured danger threshold.",
+      "aqi": 173,
+      "delta": -2,
+      "createdAt": "2026-04-30T15:50:12.957Z"
+    },
+    {
+      "id": "shanghai-0-warning",
+      "city": "Shanghai",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Shanghai AQI reached 118, moving into an elevated-risk band.",
+      "aqi": 118,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.957Z"
+    },
+    {
+      "id": "shenzhen-0-warning",
+      "city": "Shenzhen",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Shenzhen AQI reached 101, moving into an elevated-risk band.",
+      "aqi": 101,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.957Z"
+    },
+    {
+      "id": "guangzhou-0-warning",
+      "city": "Guangzhou",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Guangzhou AQI reached 105, moving into an elevated-risk band.",
+      "aqi": 105,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.957Z"
+    },
+    {
+      "id": "chengdu-0-danger",
+      "city": "Chengdu",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Chengdu AQI reached 155, crossing the configured danger threshold.",
+      "aqi": 155,
+      "delta": -2,
+      "createdAt": "2026-04-30T15:50:12.957Z"
+    },
+    {
+      "id": "wuhan-0-warning",
+      "city": "Wuhan",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Wuhan AQI reached 146, moving into an elevated-risk band.",
+      "aqi": 146,
+      "delta": 0,
+      "createdAt": "2026-04-30T15:50:12.957Z"
+    },
+    {
+      "id": "hong-kong-0-warning",
+      "city": "Hong Kong",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Hong Kong AQI reached 109, moving into an elevated-risk band.",
+      "aqi": 109,
+      "delta": 2,
+      "createdAt": "2026-04-30T15:50:12.957Z"
+    },
+    {
+      "id": "taipei-0-warning",
+      "city": "Taipei",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Taipei AQI reached 106, moving into an elevated-risk band.",
+      "aqi": 106,
+      "delta": 5,
+      "createdAt": "2026-04-30T15:50:12.957Z"
+    },
+    {
+      "id": "karachi-0-warning",
+      "city": "Karachi",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Karachi AQI reached 102, moving into an elevated-risk band.",
+      "aqi": 102,
+      "delta": -3,
+      "createdAt": "2026-04-30T15:50:12.956Z"
+    },
+    {
+      "id": "lahore-0-danger",
+      "city": "Lahore",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Lahore AQI reached 163, crossing the configured danger threshold.",
+      "aqi": 163,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.956Z"
+    },
+    {
+      "id": "kathmandu-0-warning",
+      "city": "Kathmandu",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Kathmandu AQI reached 134, moving into an elevated-risk band.",
+      "aqi": 134,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.956Z"
+    },
+    {
+      "id": "jakarta-0-warning",
+      "city": "Jakarta",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Jakarta AQI reached 125, moving into an elevated-risk band.",
+      "aqi": 125,
+      "delta": 5,
+      "createdAt": "2026-04-30T15:50:12.956Z"
+    },
+    {
+      "id": "manila-0-warning",
+      "city": "Manila",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Manila AQI reached 100, moving into an elevated-risk band.",
+      "aqi": 100,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.956Z"
+    },
+    {
+      "id": "hanoi-0-warning",
+      "city": "Hanoi",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Hanoi AQI reached 133, moving into an elevated-risk band.",
+      "aqi": 133,
+      "delta": 6,
+      "createdAt": "2026-04-30T15:50:12.956Z"
+    },
+    {
+      "id": "phnom-penh-0-warning",
+      "city": "Phnom Penh",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Phnom Penh AQI reached 127, moving into an elevated-risk band.",
+      "aqi": 127,
+      "delta": 2,
+      "createdAt": "2026-04-30T15:50:12.956Z"
+    },
+    {
+      "id": "mumbai-0-warning",
+      "city": "Mumbai",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Mumbai AQI reached 125, moving into an elevated-risk band.",
+      "aqi": 125,
+      "delta": -4,
+      "createdAt": "2026-04-30T15:50:12.955Z"
+    },
+    {
+      "id": "delhi-0-danger",
+      "city": "Delhi",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Delhi AQI reached 188, crossing the configured danger threshold.",
+      "aqi": 188,
+      "delta": -3,
+      "createdAt": "2026-04-30T15:50:12.955Z"
+    },
+    {
+      "id": "bengaluru-0-warning",
+      "city": "Bengaluru",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Bengaluru AQI reached 103, moving into an elevated-risk band.",
+      "aqi": 103,
+      "delta": -1,
+      "createdAt": "2026-04-30T15:50:12.955Z"
+    },
+    {
+      "id": "chennai-0-warning",
+      "city": "Chennai",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Chennai AQI reached 134, moving into an elevated-risk band.",
+      "aqi": 134,
+      "delta": 1,
+      "createdAt": "2026-04-30T15:50:12.955Z"
+    },
+    {
+      "id": "kolkata-0-warning",
+      "city": "Kolkata",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Kolkata AQI reached 146, moving into an elevated-risk band.",
+      "aqi": 146,
+      "delta": 3,
+      "createdAt": "2026-04-30T15:50:12.955Z"
+    },
+    {
+      "id": "lucknow-0-danger",
+      "city": "Lucknow",
+      "severity": "warning",
+      "rule": "AQI danger threshold",
+      "message": "Lucknow AQI reached 162, crossing the configured danger threshold.",
+      "aqi": 162,
+      "delta": 2,
+      "createdAt": "2026-04-30T15:50:12.955Z"
+    },
+    {
+      "id": "dhaka-0-warning",
+      "city": "Dhaka",
+      "severity": "warning",
+      "rule": "AQI warning threshold",
+      "message": "Dhaka AQI reached 115, moving into an elevated-risk band.",
+      "aqi": 115,
+      "delta": -1,
+      "createdAt": "2026-04-30T15:50:12.955Z"
+    }
+  ]
+}
