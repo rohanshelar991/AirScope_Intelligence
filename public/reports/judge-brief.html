@@ -14,7 +14,8 @@
       }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: "Helvetica Neue", Arial, sans-serif; background: var(--paper); color: var(--ink); }
-      .page { max-width: 1120px; margin: 0 auto; padding: 40px 28px 56px; }
+      .page { width: 100%; max-width: none; margin: 0; padding: clamp(20px, 3vw, 56px) clamp(20px, 3vw, 64px) 56px; }
+      .page > * { width: 100%; }
       .hero { background: linear-gradient(135deg, #0c1a2c, #16314f 55%, #234a64); color: white; border-radius: 28px; padding: 36px; }
       .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; color: #8bd4e7; font-weight: 700; margin-bottom: 12px; }
       h1, h2 { margin: 0; }
@@ -27,13 +28,24 @@
       .stat strong { display: block; margin-top: 8px; font-size: 26px; }
       .section { margin-top: 26px; }
       .section h2 { margin-bottom: 14px; font-size: 28px; font-family: Georgia, serif; }
-      .two-up { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+      .two-up { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 20px; align-items: start; }
+      .country-alerts { align-items: stretch; }
+      .country-alerts > .panel:first-child { display: flex; flex-direction: column; }
+      .country-insight { margin-top: auto; padding: 22px; border-radius: 18px; color: #f5fbff; background: linear-gradient(135deg, #102a46, #1c4964); }
+      .country-insight .meta { color: #9ed9e8; }
+      .country-insight h3 { margin: 6px 0 8px; font-size: 22px; }
+      .country-insight p { margin: 0; color: rgba(245,251,255,0.82); line-height: 1.6; }
+      .insight-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+      .insight-metric { padding: 12px 14px; border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; background: rgba(255,255,255,0.08); }
+      .insight-metric span { display: block; color: #b7cede; font-size: 12px; }
+      .insight-metric strong { display: block; margin-top: 5px; font-size: 19px; }
       .panel { padding: 24px; }
       table { width: 100%; border-collapse: collapse; }
       th, td { text-align: left; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
       ul { margin: 0; padding-left: 18px; }
       li { margin-bottom: 10px; line-height: 1.5; }
       .alert-list { list-style: none; padding: 0; display: grid; gap: 12px; }
+      .alert-item { overflow-wrap: anywhere; }
       .alert-item { padding: 14px 16px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(180deg, #ffffff, #f7fafc); line-height: 1.55; }
       .alert-item strong { color: #0f2743; }
       .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
@@ -59,7 +71,7 @@
           normalized storage, automated alerts, regional comparison, and intervention-oriented decision support.
         </p>
         <div class="badge-row">
-          <div class="badge">Generated 2026-04-30T15:50:13.009Z</div>
+          <div class="badge">Generated 2026-11-06T17:49:05.613Z</div>
           <div class="badge">Tracked cities 285</div>
           <div class="badge">Covered countries 63</div>
           <div class="badge">Top pollutant PM10</div>
@@ -79,7 +91,7 @@
           <h2>Highest AQI locations</h2>
           <table>
             <thead><tr><th>City</th><th>Country</th><th>AQI</th><th>Category</th></tr></thead>
-            <tbody><tr><td>Krakow</td><td>PL</td><td>193</td><td>Unhealthy</td></tr><tr><td>Faisalabad</td><td>PK</td><td>188</td><td>Unhealthy</td></tr><tr><td>Delhi</td><td>IN</td><td>188</td><td>Unhealthy</td></tr><tr><td>Zhengzhou</td><td>CN</td><td>187</td><td>Unhealthy</td></tr><tr><td>Milan</td><td>IT</td><td>184</td><td>Unhealthy</td></tr><tr><td>Rawalpindi</td><td>PK</td><td>183</td><td>Unhealthy</td></tr><tr><td>Kanpur</td><td>IN</td><td>183</td><td>Unhealthy</td></tr><tr><td>Jinan</td><td>CN</td><td>181</td><td>Unhealthy</td></tr><tr><td>Turin</td><td>IT</td><td>180</td><td>Unhealthy</td></tr><tr><td>Lodz</td><td>PL</td><td>178</td><td>Unhealthy</td></tr><tr><td>Warsaw</td><td>PL</td><td>176</td><td>Unhealthy</td></tr><tr><td>Beijing</td><td>CN</td><td>173</td><td>Unhealthy</td></tr></tbody>
+            <tbody><tr><td>Krakow</td><td>PL</td><td>193</td><td>Unhealthy</td></tr><tr><td>Faisalabad</td><td>PK</td><td>188</td><td>Unhealthy</td></tr><tr><td>Delhi</td><td>IN</td><td>188</td><td>Unhealthy</td></tr><tr><td>Zhengzhou</td><td>CN</td><td>187</td><td>Unhealthy</td></tr><tr><td>Milan</td><td>IT</td><td>184</td><td>Unhealthy</td></tr><tr><td>Kanpur</td><td>IN</td><td>183</td><td>Unhealthy</td></tr><tr><td>Rawalpindi</td><td>PK</td><td>183</td><td>Unhealthy</td></tr><tr><td>Jinan</td><td>CN</td><td>181</td><td>Unhealthy</td></tr><tr><td>Turin</td><td>IT</td><td>180</td><td>Unhealthy</td></tr><tr><td>Lodz</td><td>PL</td><td>178</td><td>Unhealthy</td></tr><tr><td>Warsaw</td><td>PL</td><td>176</td><td>Unhealthy</td></tr><tr><td>Beijing</td><td>CN</td><td>173</td><td>Unhealthy</td></tr></tbody>
           </table>
         </div>
         <div class="panel">
@@ -94,7 +106,7 @@
           </ul>
         </div>
       </section>
-      <section class="section two-up">
+      <section class="section two-up country-alerts">
         <div class="panel">
           <div class="meta">Country Intelligence</div>
           <h2>Highest average AQI by country</h2>
@@ -102,11 +114,20 @@
             <thead><tr><th>Country</th><th>Cities</th><th>Avg AQI</th><th>Max AQI</th></tr></thead>
             <tbody><tr><td>NP</td><td>2</td><td>146</td><td>157</td></tr><tr><td>PK</td><td>5</td><td>142</td><td>188</td></tr><tr><td>PL</td><td>5</td><td>139</td><td>193</td></tr><tr><td>KH</td><td>2</td><td>130</td><td>133</td></tr><tr><td>AE</td><td>3</td><td>127</td><td>134</td></tr><tr><td>QA</td><td>1</td><td>125</td><td>125</td></tr><tr><td>CN</td><td>21</td><td>122</td><td>187</td></tr><tr><td>KW</td><td>1</td><td>122</td><td>122</td></tr><tr><td>VN</td><td>4</td><td>116</td><td>136</td></tr><tr><td>EG</td><td>4</td><td>112</td><td>131</td></tr></tbody>
           </table>
+          <div class="country-insight">
+            <div class="meta">Priority response</div>
+            <h3>Focus attention where risk is highest</h3>
+            <p>NP has the highest average AQI in this snapshot. Start with local validation and targeted public guidance; review the highest-risk city before broadening interventions.</p>
+            <div class="insight-metrics">
+              <div class="insight-metric"><span>Highest-risk city</span><strong>Krakow · 193</strong></div>
+              <div class="insight-metric"><span>Highest country average</span><strong>NP · 146</strong></div>
+            </div>
+          </div>
         </div>
         <div class="panel">
           <div class="meta">Latest Alerts</div>
           <h2>Most recent escalations</h2>
-          <div class="alert-list"><div class="alert-item"><strong>Salvador</strong>: AQI warning threshold at AQI 107. Salvador AQI reached 107, moving into an elevated-risk band.</div><div class="alert-item"><strong>Fortaleza</strong>: AQI warning threshold at AQI 110. Fortaleza AQI reached 110, moving into an elevated-risk band.</div><div class="alert-item"><strong>Recife</strong>: AQI warning threshold at AQI 111. Recife AQI reached 111, moving into an elevated-risk band.</div><div class="alert-item"><strong>Belo Horizonte</strong>: AQI warning threshold at AQI 111. Belo Horizonte AQI reached 111, moving into an elevated-risk band.</div><div class="alert-item"><strong>Puebla</strong>: AQI warning threshold at AQI 141. Puebla AQI reached 141, moving into an elevated-risk band.</div><div class="alert-item"><strong>Merida</strong>: AQI warning threshold at AQI 102. Merida AQI reached 102, moving into an elevated-risk band.</div><div class="alert-item"><strong>Las Vegas</strong>: AQI warning threshold at AQI 138. Las Vegas AQI reached 138, moving into an elevated-risk band.</div><div class="alert-item"><strong>Turin</strong>: AQI danger threshold at AQI 180. Turin AQI reached 180, crossing the configured danger threshold.</div><div class="alert-item"><strong>Krakow</strong>: AQI danger threshold at AQI 193. Krakow AQI reached 193, crossing the configured danger threshold.</div><div class="alert-item"><strong>Lodz</strong>: AQI danger threshold at AQI 178. Lodz AQI reached 178, crossing the configured danger threshold.</div><div class="alert-item"><strong>Giza</strong>: AQI warning threshold at AQI 131. Giza AQI reached 131, moving into an elevated-risk band.</div><div class="alert-item"><strong>Sharjah</strong>: AQI warning threshold at AQI 113. Sharjah AQI reached 113, moving into an elevated-risk band.</div><div class="alert-item"><strong>Medina</strong>: AQI warning threshold at AQI 110. Medina AQI reached 110, moving into an elevated-risk band.</div><div class="alert-item"><strong>Xiamen</strong>: AQI warning threshold at AQI 111. Xiamen AQI reached 111, moving into an elevated-risk band.</div></div>
+          <div class="alert-list"><div class="alert-item"><strong>Belo Horizonte</strong>: AQI warning threshold at AQI 111. Belo Horizonte AQI reached 111, moving into an elevated-risk band.</div><div class="alert-item"><strong>Puebla</strong>: AQI warning threshold at AQI 141. Puebla AQI reached 141, moving into an elevated-risk band.</div><div class="alert-item"><strong>Merida</strong>: AQI warning threshold at AQI 102. Merida AQI reached 102, moving into an elevated-risk band.</div><div class="alert-item"><strong>Salvador</strong>: AQI warning threshold at AQI 107. Salvador AQI reached 107, moving into an elevated-risk band.</div><div class="alert-item"><strong>Fortaleza</strong>: AQI warning threshold at AQI 110. Fortaleza AQI reached 110, moving into an elevated-risk band.</div><div class="alert-item"><strong>Recife</strong>: AQI warning threshold at AQI 111. Recife AQI reached 111, moving into an elevated-risk band.</div><div class="alert-item"><strong>Las Vegas</strong>: AQI warning threshold at AQI 138. Las Vegas AQI reached 138, moving into an elevated-risk band.</div><div class="alert-item"><strong>Krakow</strong>: AQI danger threshold at AQI 193. Krakow AQI reached 193, crossing the configured danger threshold.</div><div class="alert-item"><strong>Lodz</strong>: AQI danger threshold at AQI 178. Lodz AQI reached 178, crossing the configured danger threshold.</div><div class="alert-item"><strong>Turin</strong>: AQI danger threshold at AQI 180. Turin AQI reached 180, crossing the configured danger threshold.</div><div class="alert-item"><strong>Medina</strong>: AQI warning threshold at AQI 110. Medina AQI reached 110, moving into an elevated-risk band.</div><div class="alert-item"><strong>Giza</strong>: AQI warning threshold at AQI 131. Giza AQI reached 131, moving into an elevated-risk band.</div><div class="alert-item"><strong>Xiamen</strong>: AQI warning threshold at AQI 111. Xiamen AQI reached 111, moving into an elevated-risk band.</div><div class="alert-item"><strong>Zhengzhou</strong>: AQI danger threshold at AQI 187. Zhengzhou AQI reached 187, crossing the configured danger threshold.</div></div>
         </div>
       </section>
       <div class="footer">

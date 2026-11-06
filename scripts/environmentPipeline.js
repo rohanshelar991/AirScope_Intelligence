@@ -724,7 +724,8 @@ function writeJudgeHtmlReport(latestCities, summary, alerts) {
       }
       * { box-sizing: border-box; }
       body { margin: 0; font-family: "Helvetica Neue", Arial, sans-serif; background: var(--paper); color: var(--ink); }
-      .page { max-width: 1120px; margin: 0 auto; padding: 40px 28px 56px; }
+      .page { width: 100%; max-width: none; margin: 0; padding: clamp(20px, 3vw, 56px) clamp(20px, 3vw, 64px) 56px; }
+      .page > * { width: 100%; }
       .hero { background: linear-gradient(135deg, #0c1a2c, #16314f 55%, #234a64); color: white; border-radius: 28px; padding: 36px; }
       .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 12px; color: #8bd4e7; font-weight: 700; margin-bottom: 12px; }
       h1, h2 { margin: 0; }
@@ -737,13 +738,24 @@ function writeJudgeHtmlReport(latestCities, summary, alerts) {
       .stat strong { display: block; margin-top: 8px; font-size: 26px; }
       .section { margin-top: 26px; }
       .section h2 { margin-bottom: 14px; font-size: 28px; font-family: Georgia, serif; }
-      .two-up { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+      .two-up { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 20px; align-items: start; }
+      .country-alerts { align-items: stretch; }
+      .country-alerts > .panel:first-child { display: flex; flex-direction: column; }
+      .country-insight { margin-top: auto; padding: 22px; border-radius: 18px; color: #f5fbff; background: linear-gradient(135deg, #102a46, #1c4964); }
+      .country-insight .meta { color: #9ed9e8; }
+      .country-insight h3 { margin: 6px 0 8px; font-size: 22px; }
+      .country-insight p { margin: 0; color: rgba(245,251,255,0.82); line-height: 1.6; }
+      .insight-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+      .insight-metric { padding: 12px 14px; border: 1px solid rgba(255,255,255,0.16); border-radius: 14px; background: rgba(255,255,255,0.08); }
+      .insight-metric span { display: block; color: #b7cede; font-size: 12px; }
+      .insight-metric strong { display: block; margin-top: 5px; font-size: 19px; }
       .panel { padding: 24px; }
       table { width: 100%; border-collapse: collapse; }
       th, td { text-align: left; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
       ul { margin: 0; padding-left: 18px; }
       li { margin-bottom: 10px; line-height: 1.5; }
       .alert-list { list-style: none; padding: 0; display: grid; gap: 12px; }
+      .alert-item { overflow-wrap: anywhere; }
       .alert-item { padding: 14px 16px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(180deg, #ffffff, #f7fafc); line-height: 1.55; }
       .alert-item strong { color: #0f2743; }
       .badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
@@ -804,7 +816,7 @@ function writeJudgeHtmlReport(latestCities, summary, alerts) {
           </ul>
         </div>
       </section>
-      <section class="section two-up">
+      <section class="section two-up country-alerts">
         <div class="panel">
           <div class="meta">Country Intelligence</div>
           <h2>Highest average AQI by country</h2>
@@ -812,6 +824,15 @@ function writeJudgeHtmlReport(latestCities, summary, alerts) {
             <thead><tr><th>Country</th><th>Cities</th><th>Avg AQI</th><th>Max AQI</th></tr></thead>
             <tbody>${topCountries.map((item) => `<tr><td>${item.country}</td><td>${item.count}</td><td>${item.averageAqi}</td><td>${item.maxAqi}</td></tr>`).join('')}</tbody>
           </table>
+          <div class="country-insight">
+            <div class="meta">Priority response</div>
+            <h3>Focus attention where risk is highest</h3>
+            <p>${topCountries[0]?.country || 'No region'} has the highest average AQI in this snapshot. Start with local validation and targeted public guidance; review the highest-risk city before broadening interventions.</p>
+            <div class="insight-metrics">
+              <div class="insight-metric"><span>Highest-risk city</span><strong>${topRisk[0]?.city || 'N/A'} · ${topRisk[0]?.aqi ?? '—'}</strong></div>
+              <div class="insight-metric"><span>Highest country average</span><strong>${topCountries[0]?.country || 'N/A'} · ${topCountries[0]?.averageAqi ?? '—'}</strong></div>
+            </div>
+          </div>
         </div>
         <div class="panel">
           <div class="meta">Latest Alerts</div>
