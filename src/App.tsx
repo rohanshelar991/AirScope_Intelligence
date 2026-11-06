@@ -377,7 +377,11 @@ function App() {
 
       const apiResponse = await fetch('/api/dashboard');
 
-      if (apiResponse.ok) {
+      // On static hosts the SPA rewrite can return index.html for the API path.
+      // Only treat a successful JSON response as the live API; otherwise load
+      // the snapshot files served from /data.
+      const apiContentType = apiResponse.headers.get('content-type') || '';
+      if (apiResponse.ok && apiContentType.includes('application/json')) {
         const apiPayload = await readJsonResponse<DashboardApiPayload>(apiResponse);
         setLatest(apiPayload.latest);
         setHistory(apiPayload.history);
