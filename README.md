@@ -1,199 +1,130 @@
-# Global Air Quality & Weather Intelligence System
+# AirScope Intelligence
 
-This project is a hackathon-ready environmental intelligence platform that combines:
+AirScope Intelligence is a city-level air quality and weather monitoring dashboard. It combines AQI readings with current weather, highlights locations that may need attention, and produces summaries for operators and executive reviews.
 
-- WAQI air quality data
-- OpenWeather current weather data
-- Automated threshold-based alerts
-- A React dashboard for decision-makers
+## What the project does
 
-The focus is on ingestion, transformation, automation, storage, and analytical clarity.
+- Tracks AQI and weather conditions across a configurable list of cities. The default list is a built-in global city network.
+- Shows headline indicators such as average AQI, critical and warning city counts, and triggered alerts.
+- Ranks high-risk cities and compares average AQI across countries.
+- Keeps historical snapshots for trend and weather-correlation analysis.
+- Flags warning, danger, hazardous, and sudden-spike conditions using configurable thresholds.
+- Provides dashboard views for maps, city search, alerts, trends, regional comparisons, and intervention planning.
+- Generates JSON snapshots, an executive HTML brief, and a PDF report.
 
-## What It Does
+## How it works
 
-The system:
+The ingestion pipeline requests air-quality data from the World Air Quality Index (WAQI) service and weather data from OpenWeather. It normalizes the results into city snapshots, calculates summaries and alerts, and writes outputs to the project’s data folders. The React dashboard reads these outputs from `public/data` and presents them as interactive views.
 
-- fetches AQI and weather data for a configured city list
-- normalizes both sources into one structured snapshot model
-- stores latest, historical, alert, and archive outputs as JSON
-- calculates summary insights and weather-to-pollution correlations
-- triggers alerts for warning, danger, hazardous, and sudden spike events
-- renders a dashboard with AQI trends, city comparison, correlation views, and alert summaries
+The pipeline supports three modes:
 
-## Architecture
+- **Demo:** generates a local sample dataset without calling external weather or AQI APIs.
+- **Live:** fetches fresh data and requires API keys.
+- **Scheduled:** runs the live pipeline immediately, then repeats on the configured cron schedule.
 
-### Ingestion
+## Run locally
 
-- `scripts/environmentPipeline.js`
-- Pulls data from WAQI and OpenWeather
-- Supports live, demo, and scheduled modes
-
-### Storage
-
-- `public/data/environment-latest.json`
-- `public/data/environment-history.json`
-- `public/data/alerts.json`
-- `public/data/analytics.json`
-- `data/archive/*.jsonl`
-- `logs/alerts.log`
-
-### Dashboard
-
-- `src/App.tsx`
-- Reads generated JSON files from `public/data`
-- Shows:
-  - AQI trend over time
-  - city-wise AQI comparison
-  - weather correlation analysis
-  - executive summary metrics
-  - automated alert feed
-
-## Setup
-
-### 1. Install dependencies
+Requirements: Node.js and npm.
 
 ```bash
 npm install
-```
-
-### 2. Configure environment variables
-
-Copy `.env.example` to `.env.local` and set your keys.
-
-Required:
-
-```env
-WAQI_API_KEY=your_waqi_key
-OPENWEATHER_API_KEY=your_openweather_key
-CITY_LIST=Mumbai,Delhi,London,Los Angeles
-```
-
-Optional alerting:
-
-```env
-ALERT_MODE=console
-ALERT_RECIPIENT=team@example.com
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_gmail_app_password
-SMS_RECIPIENT=+911234567890
-TWILIO_ACCOUNT_SID=your_twilio_sid
-TWILIO_AUTH_TOKEN=your_twilio_token
-TWILIO_PHONE_NUMBER=your_twilio_number
-PIPELINE_CRON=*/30 * * * *
-```
-
-Supported `ALERT_MODE` values:
-
-- `console`
-- `email`
-- `sms`
-- `all`
-
-## Run Modes
-
-### Demo dataset
-
-Generates a realistic multi-city history without calling live APIs.
-
-```bash
 npm run pipeline:demo
+npm start
 ```
 
-### One live ingestion run
+Open the local URL printed by the development server. The demo pipeline creates the data files needed by the dashboard without API credentials.
+
+## Live data configuration
+
+Copy `.env.example` to `.env.local` and add your service keys:
+
+```env
+WAQI_API_KEY=your_waqi_api_key
+OPENWEATHER_API_KEY=your_openweather_api_key
+```
+
+Then run one live ingestion:
 
 ```bash
 npm run pipeline:run
 ```
 
-### Scheduled ingestion
+To monitor a custom set of cities, add a comma-separated list:
 
-Uses `PIPELINE_CRON` from `.env.local`.
+```env
+CITY_LIST=Mumbai,Delhi,London,Los Angeles
+```
+
+If `CITY_LIST` is omitted, the pipeline uses its built-in city network. Keep `.env.local` private; it is excluded from Git.
+
+### Alerts and thresholds
+
+The pipeline writes alerts to its output files and logs. Console alerts are the default. Email and SMS delivery can be configured with SMTP/Gmail and Twilio credentials in `.env.local`.
+
+```env
+ALERT_MODE=console
+AQI_WARNING_THRESHOLD=100
+AQI_DANGER_THRESHOLD=150
+AQI_HAZARDOUS_THRESHOLD=200
+AQI_SPIKE_DELTA=35
+PIPELINE_CRON=*/30 * * * *
+```
+
+`ALERT_MODE` accepts `console`, `email`, `sms`, or `all`. Scheduled mode uses `PIPELINE_CRON`:
 
 ```bash
 npm run pipeline:schedule
 ```
 
-### Start the dashboard
+## Optional local API
+
+The app can use the local dashboard API server for the generated snapshots. Start it in a separate terminal from the React app:
 
 ```bash
-npm start
+npm run api:start
 ```
 
-## Dashboard Views
+Available endpoints:
 
-The dashboard includes:
+- `GET /api/health`
+- `GET /api/dashboard`
+- `GET /api/latest`
+- `GET /api/history`
+- `GET /api/alerts`
 
-- AQI trends over time for the selected city
-- city-wise AQI comparison bar chart
-- weather factor vs AQI scatter analysis
-- current environmental brief
-- correlation coefficients across temperature, humidity, wind speed, and pressure
-- pipeline workflow summary
-- latest alert cards
+The API reads the same JSON files generated in `public/data`; generate demo or live data first.
 
-## Alert Logic
+## Generated files
 
-The pipeline raises alerts when:
+- `public/data/environment-latest.json` — latest city snapshot and summary.
+- `public/data/environment-history.json` — historical city readings.
+- `public/data/alerts.json` — generated alert records.
+- `public/data/analytics.json` — aggregate analysis and insights.
+- `public/reports/judge-brief.html` and `public/reports/judge-brief.pdf` — executive report outputs.
+- `data/archive/` — archived pipeline records.
+- `logs/alerts.log` — alert log.
 
-- AQI crosses the warning threshold
-- AQI crosses the danger threshold
-- AQI reaches hazardous levels
-- AQI spikes sharply compared with the previous snapshot
-
-Thresholds are configurable through:
-
-```env
-AQI_WARNING_THRESHOLD=100
-AQI_DANGER_THRESHOLD=150
-AQI_HAZARDOUS_THRESHOLD=200
-AQI_SPIKE_DELTA=35
-```
-
-## Demo Flow For Judges
-
-1. Run `npm run pipeline:demo`
-2. Run `npm start`
-3. Open the app in the browser
-4. Explain the pipeline stages from the dashboard
-5. Switch to live mode with `npm run pipeline:run` if API keys are configured
-
-## Verification
-
-Production build:
+## Useful commands
 
 ```bash
-npm run build
+npm start                 # Start the React development server
+npm run build              # Create a production build
+npm test                   # Run the test suite
+npm run pipeline:demo      # Generate demo data
+npm run pipeline:run       # Fetch live data
+npm run pipeline:schedule  # Run the live pipeline on a schedule
+npm run api:start          # Start the local JSON API
 ```
 
-## Vercel Deploy
+## Deployment
 
-This repo is now set up to deploy cleanly to Vercel using the static snapshot files in `public/data`.
+The included `vercel.json` configures a static frontend deployment. The built dashboard serves its JSON snapshots from `public/data`. Live ingestion, the cron scheduler, and the local Node API are separate runtime processes and are not started by a static Vercel deployment. Refresh and commit the snapshot files when you want a deployment to show newer data, or add a hosted ingestion/API service for continuously updated data.
 
-### Recommended deployment flow
+## Main project areas
 
-1. Run `npm run pipeline:demo` or `npm run pipeline:run`
-2. Commit the refreshed files in `public/data`
-3. Import the `clima-now` folder as the Vercel project root
-4. Deploy with the included `vercel.json`
-
-### What works on Vercel
-
-- SPA routing falls back to `index.html`
-- `public/data/*.json` is served directly for the dashboard
-- the UI automatically labels static production mode as `Vercel Snapshot`
-- shareable links can point to a page hash and selected city query
-
-### What does not run on Vercel by default
-
-- `npm run pipeline:schedule`
-- `npm run api:start`
-
-Those remain local/background runtime tools. On Vercel, the dashboard is intended to read the generated snapshot JSON files unless you later add a hosted API layer.
-
-## Key Files
-
-- `scripts/environmentPipeline.js`: ingestion, transformation, storage, alerts
-- `src/App.tsx`: intelligence dashboard
-- `src/App.css`: dashboard styling
-- `vercel.json`: Vercel deployment configuration
-- `.env.example`: environment template
+- `src/App.tsx` — dashboard application and views.
+- `src/App.css` — dashboard styling.
+- `scripts/environmentPipeline.js` — ingestion, normalization, analytics, alerting, and report generation.
+- `scripts/dashboardApiServer.js` — local read-only API for generated JSON snapshots.
+- `public/data/` — dashboard snapshot data.
+- `public/reports/` — generated executive reports.
